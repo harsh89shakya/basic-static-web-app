@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "harsh89shakya/basic-static-web-app"
-        DOCKER_CREDS = credentials('docker hub credentials')
+        DOCKER_CREDS = credentials('harsh89shakya')
     }
 
     stages {
