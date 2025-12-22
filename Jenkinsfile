@@ -10,7 +10,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/harsh89shakya/basic-static-web-app.git'
+                git url: 'https://github.com/harsh89shakya/basic-static-web-app.git'
             }
         }
 
