@@ -17,19 +17,19 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t $DOCKER_IMAGE:latest ."
+                bat "docker build -t %DOCKER_IMAGE%:latest ."
             }
         }
 
         stage('Login to Docker Hub') {
             steps {
-                sh "docker login -u ${DOCKER_CREDS_USR} -p ${DOCKER_CREDS_PSW}"
+                bat "docker login -u %DOCKER_CREDS_USR% -p %DOCKER_CREDS_PSW%"
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh "docker push $DOCKER_IMAGE:latest"
+                bat "docker push %DOCKER_IMAGE%:latest"
             }
         }
     }
